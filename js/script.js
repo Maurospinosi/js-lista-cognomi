@@ -1,14 +1,13 @@
-var surname = prompt("Inserisci cognome");
+var surname = prompt("Inserisci il Cognome");
 
-var nameList = ["Bianchi", "Rossi", "Duzioni", "Balsano", "Verdi"];
+var nameList = ["bianchi", "rossi", "duzioni", "balsano", "verdi"];
 nameList.push(surname);
 
-nameList.sort();
-
-var content = document.getElementById('list').innerHTML;
-content = content + nameList;
-document.getElementById('list').innerHTML = content;
-
-
-// document.write(nameList.sort());
-// document.getElementById('list').innerHTML = content;
+for(var i = 0; i < nameList.length; i++){
+  nameList.sort();
+  var content = document.getElementById('list').innerHTML;
+  content = content + "<li>" + nameList[i];
+  document.getElementById('list').innerHTML = content;
+}
+var n = nameList.indexOf(surname);
+document.getElementById('number').innerHTML = n;
